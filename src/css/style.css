@@ -1,6 +1,6 @@
 body{
     font-family: Arial, sans-serif;
-    background: #d0d4df;
+    background-color: #d0d4df;
 }
 
 nav{
@@ -12,6 +12,7 @@ nav{
 .logo{
     color: #000;
     font-size: 30px;
+    font-weight: bold;
     line-height: 60px;
     padding-left: 380px;
     float: left;
@@ -23,15 +24,32 @@ nav{
 }
 
 .menu li{
+    display: inline-block;
     float: left;
+    width: 220px;
+    text-align: center;
     line-height: 60px;
-    margin-right: 40px;
     font-size: 20px;
+    overflow: hidden;
+}
+
+.menu li>a{
+    display: block;
+    transform: scale(1);
+    transition-duration: 0.3s;
+}
+.menu li>a:active{
+    color: #000;
+}
+.menu li>a:hover{
+    background-color: #6949D7;
+    color: #FFDD40;
+    transform: scale(1.2);
 }
 
 .main{
     width: 100%;
-    background: url(../img/leftlogo.png) 10px 70px/ 10% no-repeat fixed, url(../img/main2.jpg) center/ auto no-repeat local; 
+    background: url(../img/main2.jpg) center/ auto no-repeat local; 
     height: calc(100% - 60px);
 }
 
@@ -46,7 +64,20 @@ nav{
     font-size: 60px;
     font-weight: bold;
     text-shadow: 0px 2px 13px #000;
-    
+    -webkit-animation: entrance 2s ease;
+    -o-animation: entrance 2s ease;
+    animation: entrance 2s ease; 
+}
+
+@keyframes entrance{
+    from{
+        opacity: 0;
+        margin-top: -100px;
+    }
+    to{
+        opacity: 1;
+        margin-top: 0;
+    }
 }
 
 .title_container h4{
@@ -537,3 +568,4 @@ nav{
     background-color: #fae78f;
     box-shadow: 0px 0px 10px #000;
 }
+
